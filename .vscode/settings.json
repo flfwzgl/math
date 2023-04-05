@@ -1,0 +1,12 @@
+{
+  "liveServer.settings.port": 5503,
+  "[html]": {
+    "editor.formatOnSave": false
+  },
+  "[javascript]": {
+    "editor.formatOnSave": false
+  },
+  "eslint.options": {
+    "ignorePatterns": ["temp/**/*", "deprecated/**/*"]
+  }
+}

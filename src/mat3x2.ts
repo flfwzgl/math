@@ -11,19 +11,19 @@ const p = setProto(
   {
     // prettier-ignore
     from(
-    a = 1, b = 0,
-    c = 0, d = 1,
-    e = 0, f = 0
-  ) {
-    this[0] = a
-    this[1] = b
-    this[2] = c
-    this[3] = d
-    this[4] = e
-    this[5] = f
-    
-    return this
-  },
+      a = 1, b = 0,
+      c = 0, d = 1,
+      e = 0, f = 0
+    ) {
+      this[0] = a
+      this[1] = b
+      this[2] = c
+      this[3] = d
+      this[4] = e
+      this[5] = f
+      
+      return this
+    },
 
     fromArray(m: number[]) {
       // prettier-ignore
@@ -61,25 +61,25 @@ const p = setProto(
 
     // prettier-ignore
     transpose() {
-    const [
-      a00, a10,
-      a01, a11,
-      a02, a12
-    ] = this
-    
-    return mat2x3(
-      a00, a01, a02,
-      a10, a11, a12
-    )
-  },
+      const [
+        a00, a10,
+        a01, a11,
+        a02, a12
+      ] = this
+      
+      return mat2x3(
+        a00, a01, a02,
+        a10, a11, a12
+      )
+    },
 
     invert() {
       // prettier-ignore
       const [
-      a, b,
-      c, d,
-      e, f
-    ] = this
+        a, b,
+        c, d,
+        e, f
+      ] = this
 
       const n = a * d - b * c
 
@@ -95,35 +95,35 @@ const p = setProto(
 
     // prettier-ignore
     transformVec(v: Vec3) {
-    const [
-      a, b,
-      c, d,
-      e, f
-    ] = this
-    
-    const [x, y, z] = v
-    
-    return vec3(
-      a * x + c * y + e * z,
-      b * x + d * y + f * z,
-      z
-    )
-  },
+      const [
+        a, b,
+        c, d,
+        e, f
+      ] = this
+      
+      const [x, y, z] = v
+      
+      return vec3(
+        a * x + c * y + e * z,
+        b * x + d * y + f * z,
+        z
+      )
+    },
 
     toMat3() {
       // prettier-ignore
       const [
-      a, b,
-      c, d,
-      e, f
-    ] = this
+        a, b,
+        c, d,
+        e, f
+      ] = this
 
       // prettier-ignore
       return mat3(
-      a, b, 0,
-      c, d, 0,
-      e, f, 1
-    )
+        a, b, 0,
+        c, d, 0,
+        e, f, 1
+      )
     },
   },
   baseProto

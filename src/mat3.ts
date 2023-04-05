@@ -39,21 +39,21 @@ const p = setProto(
   {
     // prettier-ignore
     from(
-    a00: number, a01: number, a02: number,
-    a10: number, a11: number, a12: number,
-    a20: number, a21: number, a22: number
-  ) {
-    this[0] = a00
-    this[1] = a01
-    this[2] = a02
-    this[3] = a10
-    this[4] = a11
-    this[5] = a12
-    this[6] = a20
-    this[7] = a21
-    this[8] = a22
-    return this
-  },
+      a00: number, a01: number, a02: number,
+      a10: number, a11: number, a12: number,
+      a20: number, a21: number, a22: number
+    ) {
+      this[0] = a00
+      this[1] = a01
+      this[2] = a02
+      this[3] = a10
+      this[4] = a11
+      this[5] = a12
+      this[6] = a20
+      this[7] = a21
+      this[8] = a22
+      return this
+    },
 
     fromArray(m: number[]) {
       // prettier-ignore
@@ -112,10 +112,10 @@ const p = setProto(
     translate(tx = 0, ty = 0) {
       // prettier-ignore
       return this.prepend(mat3(
-      1, 0, 0,
-      0, 1, 0,
-      tx, ty, 1
-    ))
+        1, 0, 0,
+        0, 1, 0,
+        tx, ty, 1
+      ))
     },
 
     translateX(tx: number) {
@@ -149,19 +149,19 @@ const p = setProto(
 
       // prettier-ignore
       return this.prepend(mat3(
-      c, s, 0,
-      -s, c, 0,
-      0, 0, 1,
-    ))
+        c, s, 0,
+        -s, c, 0,
+        0, 0, 1,
+      ))
     },
 
     invert() {
       // prettier-ignore
       const [
-      a00, a01, a02,
-      a10, a11, a12,
-      a20, a21, a22
-    ] = this
+        a00, a01, a02,
+        a10, a11, a12,
+        a20, a21, a22
+      ] = this
 
       const b01 = a22 * a11 - a12 * a21
       const b11 = -a22 * a10 + a12 * a20
@@ -188,10 +188,10 @@ const p = setProto(
     transformVec(v: Vec3 | Vec2) {
       // prettier-ignore
       const [
-      a00, a01, a02,
-      a10, a11, a12,
-      a20, a21, a22
-    ] = this
+        a00, a01, a02,
+        a10, a11, a12,
+        a20, a21, a22
+      ] = this
 
       const [x, y, z = 1] = v
 
@@ -214,54 +214,54 @@ const p = setProto(
 
     // prettier-ignore
     toMat3x2() {
-    const [
-      a00, a01, a02,
-      a10, a11, a12,
-      a20, a21, a22,
-    ] = this
+      const [
+        a00, a01, a02,
+        a10, a11, a12,
+        a20, a21, a22,
+      ] = this
 
-    return mat3x2(a00, a01, a10, a11, a20, a21)
-  },
+      return mat3x2(a00, a01, a10, a11, a20, a21)
+    },
 
     // prettier-ignore
     toMat2x3() {
-    const [
-      a00, a01, a02,
-      a10, a11, a12
-    ] = this
+      const [
+        a00, a01, a02,
+        a10, a11, a12
+      ] = this
 
-    return mat2x3(a00, a01, a02, a10, a11, a12)
-  },
+      return mat2x3(a00, a01, a02, a10, a11, a12)
+    },
 
     // prettier-ignore
     toMat2() {
-    const [
-      a00, a01, a02,
-      a10, a11, a12,
-      a20, a21, a22,
-    ] = this
-    
-    return mat2(
-      a00, a01,
-      a10, a11
-    )
-  },
+      const [
+        a00, a01, a02,
+        a10, a11, a12,
+        a20, a21, a22,
+      ] = this
+      
+      return mat2(
+        a00, a01,
+        a10, a11
+      )
+    },
 
     // prettier-ignore
     toMat4() {
-    const [
-      a00, a01, a02,
-      a10, a11, a12,
-      a20, a21, a22,
-    ] = this
-    
-    return mat4(
-      a00, a01, a02, 0,
-      a10, a11, a12, 0,
-      a20, a21, a22, 0,
-      0,   0,   0,   1
-    )
-  },
+      const [
+        a00, a01, a02,
+        a10, a11, a12,
+        a20, a21, a22,
+      ] = this
+      
+      return mat4(
+        a00, a01, a02, 0,
+        a10, a11, a12, 0,
+        a20, a21, a22, 0,
+        0,   0,   0,   1
+      )
+    },
   },
   baseProto
 ) as any

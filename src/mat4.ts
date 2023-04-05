@@ -322,7 +322,7 @@ const p = setProto(
         a10, a11, a12,
         a20, a21, a22
       )
-  },
+    },
 
     // prettier-ignore
     toMat4x3 () {
@@ -339,7 +339,7 @@ const p = setProto(
         a20, a21, a22,
         a30, a31, a32
       )
-  },
+    },
 
     // prettier-ignore
     toMat3x4 () {

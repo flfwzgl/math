@@ -11,26 +11,26 @@ const p = setProto(
   {
     // prettier-ignore
     from(
-    a00 = 1, a01 = 0, a02 = 0,
-    a10 = 0, a11 = 1, a12 = 0,
-    a20 = 0, a21 = 0, a22 = 1,
-    a30 = 0, a31 = 0, a32 = 0,
-  ) {
-    this[0] = a00
-    this[1] = a01
-    this[2] = a02
-    this[3] = a10
-    this[4] = a11
-    this[5] = a12
-    this[6] = a20
-    this[7] = a21
-    this[8] = a22
-    this[9] = a30
-    this[10] = a31
-    this[11] = a32
+      a00 = 1, a01 = 0, a02 = 0,
+      a10 = 0, a11 = 1, a12 = 0,
+      a20 = 0, a21 = 0, a22 = 1,
+      a30 = 0, a31 = 0, a32 = 0,
+    ) {
+      this[0] = a00
+      this[1] = a01
+      this[2] = a02
+      this[3] = a10
+      this[4] = a11
+      this[5] = a12
+      this[6] = a20
+      this[7] = a21
+      this[8] = a22
+      this[9] = a30
+      this[10] = a31
+      this[11] = a32
 
-    return this
-  },
+      return this
+    },
 
     // prettier-ignore
     fromArray(m: number[]) {

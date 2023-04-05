@@ -33,6 +33,9 @@ export const setProto = <T>(e: T, p: object) => {
 export const noop = ((...args: any[]) => {}) as any
 export const EPSILON = 1e-6
 
+export const clamp = (n: number, min: number, max: number) =>
+  Math.max(min, Math.min(n, max))
+
 export enum types {
   mat2,
 

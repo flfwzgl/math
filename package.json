@@ -1,6 +1,6 @@
 {
   "name": "@hippie/math",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "WebGL math library",
   "keywords": [
     "WebGL",

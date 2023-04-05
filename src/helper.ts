@@ -1,31 +1,25 @@
 import mat4 from './mat4'
 import { Vec3 } from './vec3'
 
-export const lookAt = (camera: Vec3, target: Vec3, up: Vec3) => {
-  const Z = camera.clone().substract(target).normalize()
-  const X = up.clone().cross(Z).normalize()
-  const Y = Z.clone().cross(X).normalize()
-  const C = camera
+// prettier-ignore
+export const lookAt = (c: Vec3, t: Vec3, up: Vec3) => {
+  const z = c.clone().substract(t).normalize()
+  const x = up.clone().cross(z).normalize()
+  const y = z.clone().cross(x).normalize()
 
-  // prettier-ignore
   return mat4(
-    X.x, X.y, X.z, 0,
-    Y.x, Y.y, Y.z, 0,
-    Z.x, Z.y, Z.z, 0,
-    C.x, C.y, C.z, 1
+    x[0], x[1], x[2], 0,
+    y[0], y[1], y[2], 0,
+    z[0], z[1], z[2], 0,
+    c[0], c[1], c[2], 1
   )
 }
 
-export const perspective = (
-  fov: number,
-  aspect: number,
-  n: number,
-  f: number
-) => {
+// prettier-ignore
+export const perspective = (fov: number, aspect: number, n: number, f: number) => {
   const tan = Math.tan(fov / 2)
   const range = n - f
 
-  // prettier-ignore
   return mat4(
     1 / tan / aspect , 0, 0, 0,
     0, 1 / tan, 0, 0,
